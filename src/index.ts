@@ -1,5 +1,9 @@
+interface Env {
+  GROQ_API_KEY: string;
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request: Request, env: Env): Promise<Response> {
     if (request.method === "OPTIONS") {
       return new Response(null, {
         headers: {
